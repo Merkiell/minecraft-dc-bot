@@ -5,14 +5,6 @@ const { logger } = require("./utils/logger");
 const { startServerMonitoring } = require("./services/serverMonitor");
 require("dotenv").config();
 
-// Debug environment variables
-console.log("=== ENVIRONMENT DEBUG ===");
-console.log("BOT_TOKEN exists:", !!process.env.DISCORD_BOT_TOKEN);
-console.log("BOT_TOKEN length:", process.env.DISCORD_BOT_TOKEN?.length || 0);
-console.log("CLIENT_ID:", process.env.CLIENT_ID);
-console.log("GUILD_ID:", process.env.GUILD_ID);
-console.log("=========================");
-
 class DiscordBot {
   constructor() {
     this.client = new Client({
