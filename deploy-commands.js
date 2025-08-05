@@ -4,7 +4,7 @@ const path = require("path");
 require("dotenv").config();
 
 const commands = [];
-const commandsPath = path.join(__dirname, "commands");
+const commandsPath = path.join(__dirname, "src", "commands");
 
 // Check if commands directory exists
 if (fs.existsSync(commandsPath)) {
@@ -27,6 +27,11 @@ if (fs.existsSync(commandsPath)) {
 }
 
 const rest = new REST().setToken(process.env.DISCORD_BOT_TOKEN);
+
+// Debug: Check if environment variables are loaded
+console.log("CLIENT_ID:", process.env.CLIENT_ID);
+console.log("GUILD_ID:", process.env.GUILD_ID);
+console.log("Commands found:", commands.length);
 
 (async () => {
   try {
